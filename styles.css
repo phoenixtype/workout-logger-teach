@@ -1,7 +1,7 @@
 /* Basic styling for the app */
 body {
     font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     color: black;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ body {
 h1,
 h2 {
     text-align: center;
-    color: #343A40;
+    color: #343a40;
 }
 
 form {
@@ -30,13 +30,13 @@ form {
 input {
     margin: 5px;
     padding: 5px;
-    border: 1px solid #CED4DA;
+    border: 1px solid #ced4da;
     border-radius: 5px;
     width: 100%;
 }
 
 button {
-    background-color: #343A40;
+    background-color: #343a40;
     color: white;
     border: none;
     padding: 10px;
@@ -71,16 +71,17 @@ li {
 
 .completed {
     text-decoration: line-through;
-    color: #6C757D;
+    color: #6c757d;
 }
 
 .completed-btn {
-    background-color: #28A745;
+    background-color: #28a745;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 .completed-btn:hover {
@@ -88,7 +89,7 @@ li {
 }
 
 .remove-btn {
-    background-color: #DC3545;
+    background-color: #dc3545;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -97,5 +98,36 @@ li {
 }
 
 .remove-btn:hover {
-    background-color: #C82333;
+    background-color: #c82333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+@media only screen and (max-width: 600px) {
+    form {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    input,
+    button {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    li {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .completed-btn,
+    .remove-btn {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        margin-right: 0;
+    }
 }
