@@ -108,20 +108,22 @@ li {
 }
 
 /* Media queries */
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 500px) {
   form {
+    padding: 10px;
     margin: 0;
     border-radius: 0;
+    box-shadow: none;
   }
 
   input,
   button {
-    margin: 0;
+    margin: 5px 0;
     border-radius: 0;
   }
 
   li {
-    margin: 0;
+    margin: 5px 0;
     border-radius: 0;
   }
 
@@ -129,31 +131,6 @@ li {
   .remove-btn {
     font-size: 0.8rem;
     padding: 3px 8px;
-    margin-right: 0;
-  }
-}
-
-@media only screen and (min-width: 391px) and (max-width: 500px) {
-  form {
-    margin: 0;
-    border-radius: 0;
-  }
-
-  input,
-  button {
-    margin: 0;
-    border-radius: 0;
-  }
-
-  li {
-    margin: 0;
-    border-radius: 0;
-  }
-
-  .completed-btn,
-  .remove-btn {
-    font-size: 0.9rem;
-    padding: 4px 10px;
     margin-right: 0;
   }
 }
@@ -171,7 +148,7 @@ li {
   }
 
   li {
-    margin: 0;
+    margin: 5px 0;
     border-radius: 0;
   }
 
