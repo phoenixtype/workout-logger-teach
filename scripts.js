@@ -41,7 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadExercises() {
     const exercises = getExercisesFromLocalStorage();
 
-    exercises.forEach(addExerciseToList);
+    // Filter out completed and removed exercises
+    const filteredExercises = exercises.filter(
+      (exerciseObj) => !exerciseObj.completed && !exerciseObj.removed
+    );
+
+    filteredExercises.forEach(addExerciseToList);
   }
 
   // Function to add an exercise to the list
@@ -72,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add event listener to the "Remove" button
     li.querySelector(".remove-btn").addEventListener("click", function () {
       li.remove();
+      exerciseObj.removed = true;
       removeExerciseFromLocalStorage(exerciseObj);
     });
 
@@ -113,9 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ).map((li) => {
       const exerciseObj = JSON.parse(li.getAttribute("data-exercise-obj"));
       exerciseObj.completed = li.classList.contains("completed");
+      exerciseObj.removed = li.classList.contains("removed");
       return exerciseObj;
     });
-    localStorage.setItem("exercises", JSON.stringify(exercises));
+    // Remove completed and removed exercises
+    const filteredExercises = exercises.filter(
+      (exerciseObj) => !exerciseObj.completed && !exerciseObj.removed
+    );
+
+    localStorage.setItem("exercises", JSON.stringify(filteredExercises));
   }
 
   // Add event listener to the form
