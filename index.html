@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Logger</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Workout Logger</h1>
+    <form id="workout-form">
+      <label for="exercise">Exercise:</label>
+      <input type="text" id="exercise" name="exercise" required />
+      <br />
+      <label for="reps">Repetitions:</label>
+      <input type="number" id="reps" name="reps" min="1" required />
+      <br />
+      <label for="sets">Sets:</label>
+      <input type="number" id="sets" name="sets" min="1" required />
+      <br />
+      <label for="set-time">Time per Set (seconds):</label>
+      <input type="number" id="set-time" name="set-time" min="1" required />
+      <br />
+      <label for="recovery-time">Recovery Time (seconds):</label>
+      <input
+        type="number"
+        id="recovery-time"
+        name="recovery-time"
+        min="1"
+        required
+      />
+      <br />
+      <button type="submit">Add Exercise</button>
+    </form>
+    <div>
+      <h2>Exercises</h2>
+      <ul id="exercise-list"></ul>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
